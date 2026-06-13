@@ -18,7 +18,7 @@ This project helps you register tasks, track their status, and manage them effic
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Files
 
 ```
 - `main.py` → CLI interface
