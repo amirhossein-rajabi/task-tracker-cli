@@ -21,13 +21,12 @@ This project helps you register tasks, track their status, and manage them effic
 ## 📁 Project Structure
 
 ```
-task-tracker-cli/
-├── main.py                 # Main entry point and CLI handler
-├── task_manager.py         # Core task management logic
-├── storage.py              # JSON file read/write operations
-├── tasks.json              # Data storage file (auto-created)
-├── .gitignore              # Git ignore rules
-└── README.md
+- `main.py` → CLI interface
+- `task_manager.py` → Business logic + Docstrings
+- `storage.py` → JSON persistence
+- `test_task_tracker.py` → Unit & Integration tests
+- `requirements.txt` → Dependencies (none required)
+- `.gitignore` → Ignores temporary and data files
 ```
 
 ---

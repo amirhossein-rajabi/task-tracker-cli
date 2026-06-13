@@ -1,31 +1,31 @@
+"""
+Storage Module
+Handles all file operations for saving and loading tasks using JSON.
+"""
+
 import json
 import os
-
-TASKS_FILE = "tasks.json"
-
-
-def initialize_storage():
-    if not os.path.exists(TASKS_FILE):
-        with open(TASKS_FILE, "w") as file:
-            json.dump([], file)
+from datetime import datetime
 
 
-def load_tasks():
-    initialize_storage()
+def initialize_storage(filename: str = "tasks.json") -> None:
+    """Initialize the tasks.json file if it doesn't exist."""
+    if not os.path.exists(filename):
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump([], f, indent=2, ensure_ascii=False)
+        print(f"Initialized {filename}")
 
+
+def load_tasks(filename: str = "tasks.json") -> list:
+    """Load tasks from JSON file."""
     try:
-        with open(TASKS_FILE, "r") as file:
-            content = file.read().strip()
-
-            if not content:
-                return []
-
-            return json.loads(content)
-
-    except json.JSONDecodeError:
+        with open(filename, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
 
 
-def save_tasks(tasks):
-    with open(TASKS_FILE, "w") as file:
-        json.dump(tasks, file, indent=4)
+def save_tasks(tasks: list, filename: str = "tasks.json") -> None:
+    """Save tasks to JSON file."""
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(tasks, f, indent=2, ensure_ascii=False)
