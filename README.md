@@ -112,6 +112,17 @@ Each task in `tasks.json` has the following structure:
 
 ---
 
+## 🧪 Testing
+
+Project includes comprehensive **Unit Tests** and **Integration Tests** using Python's built-in `unittest` module.
+
+Run tests with:
+
+```bash
+python -m unittest test_task_tracker.py -v
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License.
