@@ -120,7 +120,7 @@ Run tests with:
 
 ```bash
 python -m unittest test_task_tracker.py -v
-
+```
 ---
 
 ## 📄 License
